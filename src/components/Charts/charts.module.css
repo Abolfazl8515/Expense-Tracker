@@ -1,7 +1,14 @@
 .charts {
-  width: 100%;
+  position: fixed;
+  left: 3%;
+  top: 100px;
+  width: 50%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 40px 0;
+  flex-direction: column;
+  /* margin: 40px 0; */
+}
+
+.charts div {
+  width: 500px;
+  height: 300px;
 }

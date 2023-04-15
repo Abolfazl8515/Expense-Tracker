@@ -11,8 +11,10 @@ const App = () => {
     <div className="App">
       <NavBar setIsShowAdd={setIsShowAdd} />
       <TransactionForm isShowAdd={isShowAdd} setIsShowAdd={setIsShowAdd} />
-      <Charts />
-      <TransactionList />
+      <div className="box">
+        <Charts />
+        <TransactionList />
+      </div>
     </div>
   );
 };

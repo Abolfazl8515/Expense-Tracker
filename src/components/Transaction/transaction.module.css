@@ -11,7 +11,7 @@
 }
 
 .transaction .detail {
-  width: 15%;
+  width: 25%;
   display: flex;
   justify-content: space-between;
 }
