@@ -1,6 +1,8 @@
+import styles from "./charts.module.css";
+
 const Charts = () => {
   return (
-    <div>
+    <div className={styles.charts}>
       <div>Income chart</div>
       <div>expense chart</div>
     </div>

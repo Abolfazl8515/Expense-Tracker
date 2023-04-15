@@ -3,13 +3,15 @@ import NavBar from "./components/NavBar/NavBar";
 import Charts from "./components/Charts/Charts";
 import TransactionForm from "./components/TransactionForm/TransactionForm";
 import TransactionList from "./components/TransactionList/TransactionList";
+import { useState } from "react";
 
 const App = () => {
+  const [isShowAdd, setIsShowAdd] = useState(false);
   return (
     <div className="App">
-      <NavBar />
+      <NavBar setIsShowAdd={setIsShowAdd} />
+      <TransactionForm isShowAdd={isShowAdd} setIsShowAdd={setIsShowAdd} />
       <Charts />
-      <TransactionForm />
       <TransactionList />
     </div>
   );

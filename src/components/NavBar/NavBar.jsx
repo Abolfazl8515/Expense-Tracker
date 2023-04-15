@@ -1,6 +1,6 @@
 import styles from "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ setIsShowAdd }) => {
   return (
     <>
       <h1>Expense Tracker</h1>
@@ -22,7 +22,11 @@ const NavBar = () => {
           <p className={styles.title}>Transactions</p>
         </div>
         <div>
-          <button type="button" className={styles.addBtn}>
+          <button
+            type="button"
+            className={styles.addBtn}
+            onClick={() => setIsShowAdd(true)}
+          >
             Add
           </button>
         </div>

@@ -1,0 +1,141 @@
+.backDrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.tnxForm {
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  right: 35%;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 7px;
+  z-index: 3;
+  animation: ani-modal 1s 1 normal forwards;
+  opacity: 1;
+  animation: modal-animation 0.3s ease-in;
+}
+
+.tnxForm .tnxFormContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: rgb(47, 46, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(47, 46, 48, 1) 26%,
+    rgba(44, 50, 51, 1) 100%
+  );
+  margin: 0 auto;
+  border-radius: 7px;
+  z-index: 4;
+}
+
+.tnxForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tnxFormContent .titleModal {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.tnxFormContent .tnxInfo {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.tnxFormContent .checkType {
+  padding: 20px 30px;
+  display: flex;
+}
+
+.tnxFormContent .tnxInfo label,
+.tnxFormContent .checkType label {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.tnxFormContent .tnxInfo input {
+  width: 400px;
+  height: 40px;
+  font-size: 1.3rem;
+  padding: 0 10px;
+  background: rgb(67, 67, 68);
+  color: rgb(187, 187, 190);
+  border: none;
+  border-radius: 7px;
+}
+
+.tnxFormContent .checkType input {
+  font-size: 1.1rem;
+  margin: 0 10px;
+}
+
+.tnxFormContent .tnxInfo input:focus {
+  outline: none;
+  border: none;
+}
+
+.tnxFormContent .btns {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tnxFormContent .btns button {
+  padding: 10px 40px;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.tnxFormContent .btns .add {
+  padding: 10px 50px;
+  border: none;
+  background: rgb(67, 67, 68);
+}
+
+.tnxFormContent .btns .cancel {
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 990px) {
+  .tnxForm {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+@media (max-width: 530px) {
+  .tnxFormContent .tnxInfo input {
+    width: 90%;
+  }
+}
