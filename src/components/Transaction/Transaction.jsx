@@ -4,7 +4,14 @@ const Transaction = ({ transaction }) => {
   return (
     <div className={styles.transaction}>
       <div className={styles.title}>
-        <span className={styles.color}></span>
+        <span
+          className={styles.color}
+          style={
+            transaction.type == "expense"
+              ? { background: "#ec4899" }
+              : { background: "#3b82f6" }
+          }
+        ></span>
         <h2>{transaction.title}</h2>
       </div>
       <div className={styles.detail}>

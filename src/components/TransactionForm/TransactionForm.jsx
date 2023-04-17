@@ -12,6 +12,12 @@ const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
+    if (
+      formValues.amount === 0 ||
+      formValues.title === "" ||
+      formValues.type === ""
+    )
+      return;
     const transactions = [...tnx];
     const tnxInfo = {
       id: Math.floor(Math.random() * 1000),
@@ -23,6 +29,11 @@ const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
     transactions.push(tnxInfo);
     setTnx(transactions);
     setIsShowAdd(false);
+    setFormValues({
+      title: "",
+      type: "",
+      amount: 0,
+    });
   };
   return (
     <>
@@ -38,11 +49,21 @@ const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
             </div>
             <div className={styles.tnxInfo}>
               <label>Title</label>
-              <input type="text" name="title" onChange={changeHandler} />
+              <input
+                type="text"
+                name="title"
+                value={formValues.title}
+                onChange={changeHandler}
+              />
             </div>
             <div className={styles.tnxInfo}>
               <label>amount</label>
-              <input type="number" name="amount" onChange={changeHandler} />
+              <input
+                type="number"
+                name="amount"
+                value={formValues.amount}
+                onChange={changeHandler}
+              />
             </div>
             <div className={styles.checkType}>
               <input

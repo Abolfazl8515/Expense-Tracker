@@ -14,7 +14,7 @@ const App = () => {
   }, [tnx]);
   return (
     <div className="App">
-      <NavBar setIsShowAdd={setIsShowAdd} />
+      <NavBar setIsShowAdd={setIsShowAdd} tnx={tnx} />
       <TransactionForm
         isShowAdd={isShowAdd}
         setIsShowAdd={setIsShowAdd}
