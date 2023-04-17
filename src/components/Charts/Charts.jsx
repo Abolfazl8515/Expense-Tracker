@@ -2,13 +2,6 @@ import React, { useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import styles from "./charts.module.css";
 
-const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 },
-];
-
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
   const {
@@ -82,7 +75,21 @@ const renderActiveShape = (props) => {
   );
 };
 
-const Charts = () => {
+const Charts = ({ tnx }) => {
+  // const checkType = (arr) => {
+  //   return;
+  // };
+  const dataIncome = [];
+  const dataExpense = [];
+  tnx.forEach((t) => {
+    if (t.type === "income") {
+      dataIncome.push({ name: t.title, value: Number(t.amount) });
+    } else if (t.type === "expense") {
+      dataExpense.push({ name: t.title, value: Number(t.amount) });
+    }
+  });
+  console.log(dataIncome);
+  console.log(dataExpense);
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
@@ -95,7 +102,7 @@ const Charts = () => {
             <Pie
               activeIndex={activeIndex}
               activeShape={renderActiveShape}
-              data={data}
+              data={dataIncome}
               cx="50%"
               cy="50%"
               innerRadius={60}
@@ -113,7 +120,7 @@ const Charts = () => {
             <Pie
               activeIndex={activeIndex}
               activeShape={renderActiveShape}
-              data={data}
+              data={dataExpense}
               cx="50%"
               cy="50%"
               innerRadius={60}

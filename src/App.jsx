@@ -3,17 +3,27 @@ import NavBar from "./components/NavBar/NavBar";
 import Charts from "./components/Charts/Charts";
 import TransactionForm from "./components/TransactionForm/TransactionForm";
 import TransactionList from "./components/TransactionList/TransactionList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import saveLocalStorage from "./utils/saveLocalStorage";
 
 const App = () => {
+  const [tnx, setTnx] = useState(saveLocalStorage.getAllTransactions());
   const [isShowAdd, setIsShowAdd] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(tnx));
+  }, [tnx]);
   return (
     <div className="App">
       <NavBar setIsShowAdd={setIsShowAdd} />
-      <TransactionForm isShowAdd={isShowAdd} setIsShowAdd={setIsShowAdd} />
+      <TransactionForm
+        isShowAdd={isShowAdd}
+        setIsShowAdd={setIsShowAdd}
+        tnx={tnx}
+        setTnx={setTnx}
+      />
       <div className="box">
-        <Charts />
-        <TransactionList />
+        <Charts tnx={tnx} />
+        <TransactionList setIsShowAdd={setIsShowAdd} tnx={tnx} />
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
 import Transaction from "../Transaction/Transaction";
 import styles from "./TransactionList.module.css";
 
-const TransactionList = () => {
+const TransactionList = ({ tnx }) => {
   return (
     <div className={styles.transactionList}>
-      <Transaction />
+      {tnx.map((t) => (
+        <Transaction transaction={t} key={t.id} />
+      ))}
     </div>
   );
 };
