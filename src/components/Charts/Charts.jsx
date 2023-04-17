@@ -91,8 +91,12 @@ const Charts = ({ tnx }) => {
   console.log(dataIncome);
   console.log(dataExpense);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex2, setActiveIndex2] = useState(0);
   const onPieEnter = (_, index) => {
     setActiveIndex(index);
+  };
+  const onPieEnter2 = (_, index) => {
+    setActiveIndex2(index);
   };
   return (
     <div className={styles.charts}>
@@ -118,7 +122,7 @@ const Charts = ({ tnx }) => {
         <ResponsiveContainer width="100%" height="100%">
           <PieChart width={400} height={400}>
             <Pie
-              activeIndex={activeIndex}
+              activeIndex={activeIndex2}
               activeShape={renderActiveShape}
               data={dataExpense}
               cx="50%"
@@ -127,7 +131,7 @@ const Charts = ({ tnx }) => {
               outerRadius={80}
               fill="#ec4899"
               dataKey="value"
-              onMouseEnter={onPieEnter}
+              onMouseEnter={onPieEnter2}
             />
           </PieChart>
         </ResponsiveContainer>
