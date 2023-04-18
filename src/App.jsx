@@ -5,10 +5,12 @@ import TransactionForm from "./components/TransactionForm/TransactionForm";
 import TransactionList from "./components/TransactionList/TransactionList";
 import { useEffect, useState } from "react";
 import saveLocalStorage from "./utils/saveLocalStorage";
+import Filter from "./components/FIlter/Filter";
 
 const App = () => {
   const [tnx, setTnx] = useState(saveLocalStorage.getAllTransactions());
   const [isShowAdd, setIsShowAdd] = useState(false);
+  const [isShowDeleteCheckBox, setIsShowDeleteCheckBox] = useState(false);
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(tnx));
   }, [tnx]);
@@ -21,9 +23,23 @@ const App = () => {
         tnx={tnx}
         setTnx={setTnx}
       />
+      <div className="filter-box">
+        <Filter
+          showDelete={isShowDeleteCheckBox}
+          setDelete={setIsShowDeleteCheckBox}
+          tnx={tnx}
+          setTnx={setTnx}
+        />
+      </div>
       <div className="box">
         <Charts tnx={tnx} />
-        <TransactionList setIsShowAdd={setIsShowAdd} tnx={tnx} />
+        <TransactionList
+          setIsShowAdd={setIsShowAdd}
+          tnx={tnx}
+          setTnx={setTnx}
+          showDelete={isShowDeleteCheckBox}
+          setDelete={setIsShowDeleteCheckBox}
+        />
       </div>
     </div>
   );

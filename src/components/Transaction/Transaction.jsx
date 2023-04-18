@@ -1,6 +1,14 @@
 import styles from "./transaction.module.css";
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ setTnx, tnx, transaction, showDelete }) => {
+  const changeHandler = (id) => {
+    const transactions = [...tnx];
+    const findedTnx = transactions.find((t) => t.id === id);
+    console.log(findedTnx);
+    findedTnx.check = !findedTnx.check;
+    setTnx(transactions);
+    console.log(tnx);
+  };
   return (
     <div className={styles.transaction}>
       <div className={styles.title}>
@@ -17,6 +25,12 @@ const Transaction = ({ transaction }) => {
       <div className={styles.detail}>
         <p className={styles.amount}>${transaction.amount}</p>
         <p className={styles.precent}>{transaction.precent}</p>
+        <input
+          type="checkbox"
+          className={showDelete ? styles.checkDelete : styles.hidden}
+          onChange={() => changeHandler(transaction.id)}
+          checked={transaction.check}
+        />
       </div>
     </div>
   );

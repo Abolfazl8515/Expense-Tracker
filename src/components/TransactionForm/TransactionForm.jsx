@@ -25,6 +25,7 @@ const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
       amount: formValues.amount,
       type: formValues.type,
       precent: "10%",
+      check: false,
     };
     transactions.push(tnxInfo);
     setTnx(transactions);
