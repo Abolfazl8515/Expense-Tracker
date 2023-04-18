@@ -9,6 +9,7 @@ import Filter from "./components/FIlter/Filter";
 
 const App = () => {
   const [tnx, setTnx] = useState(saveLocalStorage.getAllTransactions());
+  const [searchValue, setSearchValue] = useState("");
   const [isShowAdd, setIsShowAdd] = useState(false);
   const [isShowDeleteCheckBox, setIsShowDeleteCheckBox] = useState(false);
   useEffect(() => {
@@ -29,11 +30,14 @@ const App = () => {
           setDelete={setIsShowDeleteCheckBox}
           tnx={tnx}
           setTnx={setTnx}
+          value={searchValue}
+          setValue={setSearchValue}
         />
       </div>
       <div className="box">
         <Charts tnx={tnx} />
         <TransactionList
+          value={searchValue}
           setIsShowAdd={setIsShowAdd}
           tnx={tnx}
           setTnx={setTnx}

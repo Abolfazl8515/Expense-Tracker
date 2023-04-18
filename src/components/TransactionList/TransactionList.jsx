@@ -1,10 +1,11 @@
 import Transaction from "../Transaction/Transaction";
 import styles from "./TransactionList.module.css";
 
-const TransactionList = ({ setTnx, tnx, showDelete }) => {
+const TransactionList = ({ value, setTnx, tnx, showDelete }) => {
+  const filtredTnx = tnx.filter((t) => t.title.includes(value));
   return (
     <div className={styles.transactionList}>
-      {tnx.map((t) => (
+      {filtredTnx.map((t) => (
         <Transaction
           transaction={t}
           key={t.id}

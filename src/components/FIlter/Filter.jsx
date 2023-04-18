@@ -1,7 +1,14 @@
 import styles from "./Filter.module.css";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
-const Filter = ({ tnx, setTnx, showDelete, setDelete }) => {
+const Filter = ({
+  value,
+  setValue,
+  tnx,
+  setTnx,
+  showDelete,
+  setDelete,
+}) => {
   const deleteHandler = () => {
     const checkedTnx = tnx.filter((t) => t.check === false);
     setTnx(checkedTnx);
@@ -16,7 +23,12 @@ const Filter = ({ tnx, setTnx, showDelete, setDelete }) => {
   return (
     <div className={styles.filter}>
       <div className="search">
-        <input type="text" placeholder="Search ..." />
+        <input
+          type="text"
+          placeholder="Search ..."
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
       </div>
       <div className="delete">
         {showDelete ? (
