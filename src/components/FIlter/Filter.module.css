@@ -5,3 +5,58 @@
   align-items: center;
   z-index: 2;
 }
+
+.search input {
+  width: 400px;
+  height: 40px;
+  padding: 20px;
+  border: none;
+  border-radius: 7px;
+  background: #64748b;
+  color: #fff;
+  font-size: 20px;
+}
+
+.search input::placeholder {
+  color: #fff;
+}
+
+.search input:focus {
+  outline: none;
+  border: none;
+}
+
+.delete {
+  display: flex;
+}
+
+.delete .deleteBtn {
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #dc2626;
+  border-radius: 7px;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.delete .btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.delete .confirm {
+  background: #e0c3d0;
+  color: #ec4899;
+}
+
+.delete .cancel {
+  background: #b5d8c3;
+  color: #22c55e;
+  margin-left: 20px;
+}

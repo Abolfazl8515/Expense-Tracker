@@ -76,9 +76,6 @@ const renderActiveShape = (props) => {
 };
 
 const Charts = ({ tnx }) => {
-  // const checkType = (arr) => {
-  //   return;
-  // };
   const dataIncome = [];
   const dataExpense = [];
   tnx.forEach((t) => {
@@ -88,8 +85,6 @@ const Charts = ({ tnx }) => {
       dataExpense.push({ name: t.title, value: Number(t.amount) });
     }
   });
-  console.log(dataIncome);
-  console.log(dataExpense);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeIndex2, setActiveIndex2] = useState(0);
   const onPieEnter = (_, index) => {
