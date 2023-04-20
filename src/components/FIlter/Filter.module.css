@@ -1,9 +1,10 @@
 .filter {
   width: 50%;
+  height: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: 2;
+  background: #fff;
 }
 
 .search input {
@@ -59,4 +60,25 @@
   background: #b5d8c3;
   color: #22c55e;
   margin-left: 20px;
+}
+
+@media (max-width: 1150px) {
+  .filter {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .search {
+    width: 90%;
+  }
+  .search input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .filter {
+    top: 400px;
+  }
 }

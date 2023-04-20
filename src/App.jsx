@@ -1,6 +1,5 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Charts from "./components/Charts/Charts";
 import TransactionForm from "./components/TransactionForm/TransactionForm";
 import TransactionList from "./components/TransactionList/TransactionList";
 import { useEffect, useState } from "react";
@@ -35,7 +34,6 @@ const App = () => {
         />
       </div>
       <div className="box">
-        <Charts tnx={tnx} />
         <TransactionList
           value={searchValue}
           setIsShowAdd={setIsShowAdd}

@@ -1,6 +1,27 @@
 .transactionList {
-  width: 40%;
+  width: 70%;
+  height: 300px;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
-  margin-top: 50px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 7px;
+}
+
+@media (max-width: 990px) {
+  .transactionList {
+    width: 90%;
+  }
 }

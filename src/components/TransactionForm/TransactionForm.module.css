@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 4;
 }
 
 .tnxForm {
@@ -16,8 +16,7 @@
   width: 50%;
   margin: 0 auto;
   border-radius: 7px;
-  z-index: 3;
-  animation: ani-modal 1s 1 normal forwards;
+  z-index: 5;
   opacity: 1;
   animation: modal-animation 0.3s ease-in;
 }
@@ -36,7 +35,7 @@
   );
   margin: 0 auto;
   border-radius: 7px;
-  z-index: 4;
+  z-index: 6;
 }
 
 .tnxForm form {

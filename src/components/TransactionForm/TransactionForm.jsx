@@ -4,7 +4,7 @@ import styles from "./TransactionForm.module.css";
 const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
   const [formValues, setFormValues] = useState({
     title: "",
-    type: "",
+    type: "income",
     amount: 0,
   });
   const changeHandler = (e) => {
@@ -24,7 +24,6 @@ const TransactionForm = ({ isShowAdd, setIsShowAdd, tnx, setTnx }) => {
       title: formValues.title,
       amount: formValues.amount,
       type: formValues.type,
-      precent: "10%",
       check: false,
     };
     transactions.push(tnxInfo);

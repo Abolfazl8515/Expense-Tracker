@@ -24,7 +24,6 @@ const Transaction = ({ setTnx, tnx, transaction, showDelete }) => {
       </div>
       <div className={styles.detail}>
         <p className={styles.amount}>${transaction.amount}</p>
-        <p className={styles.precent}>{transaction.precent}</p>
         <input
           type="checkbox"
           className={showDelete ? styles.checkDelete : styles.hidden}
